@@ -100,6 +100,7 @@ au FileType markdown setl com-=fb:-
 au FileType markdown setl com+=n:- " Auto append - in new line.
 au FileType markdown setl fo+=ro
 au FileType markdown setl tw=79
+au FileType markdown setl et
 
 " better terminal buffer " TODO: pluginize-vip
 if has('nvim')
