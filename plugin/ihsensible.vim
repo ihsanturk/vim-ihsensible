@@ -40,6 +40,7 @@ nn <silent> <c-c> :noh<cr>
 nn <leader>e :se cole=0<cr>
 nn <leader>v :se cole=3<cr>
 nm <leader>r :so $MYVIMRC<cr>
+au FileType help nn <buffer> q :q<cr>
 nn <leader>c :exec "e " . $MYVIMRC<cr>
 xn // y/\V<c-r>=escape(@",'/\')<cr><cr>
 nn <leader>C :exec "tabe " . $MYVIMRC<cr>
@@ -122,9 +123,6 @@ endf
 tno <silent> <Esc> <c-\><c-n>
 nm <m-t> :let $DIR=expand('%:p:h')<cr>:ter<cr>cd $DIR;tput clear<cr>
 
-" kill help buffer
-au FileType help nn <buffer> q :q<cr>
-au FileType help nn <buffer> <m-k> :q<cr>
 
 " persistent undo
 if has('persistent_undo')
