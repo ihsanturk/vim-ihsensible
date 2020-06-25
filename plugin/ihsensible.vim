@@ -94,6 +94,7 @@ exe 'set ts='.spaceindent
 hi Visual gui=none cterm=none
 au FileType vimwiki,vim se tw=79
 hi ErrorMsg ctermfg=Red ctermbg=237
+se listchars=tab:\│\ ,trail:•,nbsp:+
 if has('nvim') | se icm=nosplit sd='1000 | endif
 au FileType sql se mp=cat\ %\ \\\|\ mysql\ -uroot
 au BufWritePost * if getline(1) =~ "^#!.*/bin/" | sil !chmod +x <afile> | endif
