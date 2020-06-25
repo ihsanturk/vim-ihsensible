@@ -11,9 +11,7 @@ let mapleader = '\'
 let g:netrw_liststyle=3
 let g:netrw_dirhistmax = 0
 
-" maps
-nn j gj
-nn k gk
+"maps
 cnorea H h
 cnorea Q q
 cnorea W w
@@ -28,6 +26,8 @@ nn <space> za
 nn cn :cn<cr>
 nn cp :cp<cr>
 cnorea man Man
+nn <silent> j gj
+nn <silent> k gk
 nn co :copen<cr>
 nn <m-c> :make<cr>
 nn gf :e <cfile><cr>
@@ -40,7 +40,6 @@ nn <silent> <c-c> :noh<cr>
 nn <leader>e :se cole=0<cr>
 nn <leader>v :se cole=3<cr>
 nm <leader>r :so $MYVIMRC<cr>
-au FileType help nn <buffer> q :q<cr>
 nn <leader>c :exec "e " . $MYVIMRC<cr>
 xn // y/\V<c-r>=escape(@",'/\')<cr><cr>
 nn <leader>C :exec "tabe " . $MYVIMRC<cr>
