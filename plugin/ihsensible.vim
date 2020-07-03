@@ -7,6 +7,7 @@
 " =============================================================================
 
 let spaceindent=3
+let g:is_posix = 1
 let mapleader = '\'
 let g:netrw_liststyle=3
 let g:netrw_dirhistmax = 0
