@@ -80,14 +80,14 @@ se wic
 se list
 se noea
 se noru
+se wrap
 se nocul
 se nosmd
 se noswf
-se sbr=↪
 se cole=2
-se nowrap
 se cocu=nc
 se mouse=a
+se sbr=↪
 se mmp=20000
 se noet ci pi sts=0
 exe 'set sw='.spaceindent
