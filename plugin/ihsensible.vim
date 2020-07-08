@@ -90,6 +90,7 @@ se mouse=a
 se sbr=↪
 se mmp=20000
 se noet ci pi sts=0
+se wim=longest:full
 exe 'set sw='.spaceindent
 exe 'set ts='.spaceindent
 hi Visual gui=none cterm=none
@@ -98,7 +99,14 @@ hi ErrorMsg ctermfg=Red ctermbg=237
 se listchars=tab:\│\ ,trail:•,nbsp:+
 if has('nvim') | se icm=nosplit sd='1000 | endif
 au FileType sql se mp=cat\ %\ \\\|\ mysql\ -uroot
-au BufWritePost * if getline(1) =~ "^#!.*/bin/" | sil !chmod +x <afile> | endif
+
+aug chmod
+	au!
+	au BufWritePost *
+		\ if getline(1) =~ "^#!.*/bin/" |
+			\ sil !chmod +x <afile> |
+		\ endif
+aug END
 
 " mkdir -p for vim on write
 augroup Mkdir
