@@ -16,6 +16,8 @@ let g:netrw_dirhistmax = 0
 cnorea H h
 cnorea Q q
 cnorea W w
+cnorea BD bd
+cnorea Bd bd
 cnorea Q! q!
 cnorea Qa qa
 cnorea WQ wq
@@ -90,7 +92,7 @@ se mouse=a
 se sbr=↪
 se mmp=20000
 se noet ci pi sts=0
-se wim=longest:full
+se wim=longest,full
 exe 'set sw='.spaceindent
 exe 'set ts='.spaceindent
 hi Visual gui=none cterm=none
@@ -100,6 +102,7 @@ se listchars=tab:\│\ ,trail:•,nbsp:+
 if has('nvim') | se icm=nosplit sd='1000 | endif
 au FileType sql se mp=cat\ %\ \\\|\ mysql\ -uroot
 
+" add +x flag for file
 aug chmod
 	au!
 	au BufWritePost *
