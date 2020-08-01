@@ -48,20 +48,6 @@ xn // y/\V<c-r>=escape(@",'/\')<cr><cr>
 nn <leader>C :exec "tabe " . $MYVIMRC<cr>
 nn <leader>d :exe 'norm! a'.system("date '+%Y %b %d %X'\|tr -d '\n'")<cr>
 
-" better help
-au FileType help nn <buffer> q :q<cr>
-command! -complete=help -nargs=? BetterHelp call BetterHelp(<f-args>)
-cnorea h BetterHelp
-func! BetterHelp(...)
-	let l:phrase = a:0 ? a:1 : ''
-	if winwidth('%') >= 160
-		exe 'vert bo h' l:phrase
-		exe 'vert res 80'
-	else
-		exe 'bo h' l:phrase
-	end
-endf
-
 " switch between windows with meta (shift)? o
 nn  <silent> <m-o>   :winc w<cr>
 nn  <silent> <m-s-o> :winc p<cr>
@@ -77,7 +63,6 @@ se bri
 se lbr
 se scs
 se spr
-se tgc
 se wic
 se list
 se noea
@@ -86,6 +71,7 @@ se wrap
 se nocul
 se nosmd
 se noswf
+se notgc
 se cole=2
 se cocu=nc
 se mouse=a
