@@ -1,10 +1,10 @@
-" =============================================================================
-" File:        ihsensible.vim
-" Description: Personal sensible configuration for vim.
-" Author:      ihsan <ihsanl at pm dot me>
-" Created At:  1592826467
-" License:     MIT License
-" =============================================================================
+"           ╭───────────────────ihsensible.vim────────────────────╮
+"           Maintainer:     ihsan, ihsanl[at]pm[dot]me            │
+"           Description:    default config that vim should come   │
+"           Last Change:    2020 Aug 31 11:12:36 +03, @1598861550 │
+"           First Appeared: 2020 Jun 22 11:47:47, @1592826467     │
+"           License:        MIT                                   │
+"           ╰─────────────────────────────────────────────────────╯
 
 let spaceindent=3
 let g:is_posix = 1
@@ -35,7 +35,7 @@ nn co :copen<cr>
 nn <m-c> :make<cr>
 nn gf :e <cfile><cr>
 nn <m-.> :cd %:p:h<cr>
-cnorea cdc cd %:p:h<cr>:
+cnorea cdc tcd %:p:h<cr>:
 nn <silent><m-n> :bn<cr>
 nn <silent><m-p> :bp<cr>
 nn <leader>% :source %<cr>
