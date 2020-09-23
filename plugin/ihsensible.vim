@@ -55,7 +55,7 @@ im  <silent> <m-o>   <esc>:winc w<cr>
 tma <silent> <m-o>   <c-\><c-n>:winc w<cr>
 tma <silent> <m-s-o> <c-\><c-n>:winc p<cr>
 
-"sets
+"set
 se ic
 se sb
 se awa
@@ -71,11 +71,10 @@ se wrap
 se nocul
 se nosmd
 se noswf
-se notgc
+se sbr=↪
 se cole=2
 se cocu=nc
 se mouse=a
-se sbr=↪
 se mmp=20000
 se noet ci pi sts=0
 se wim=longest,full
