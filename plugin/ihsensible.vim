@@ -13,31 +13,31 @@ let g:netrw_liststyle=3
 let g:netrw_dirhistmax = 0
 
 "maps
+cnorea E e
 cnorea H h
 cnorea Q q
 cnorea W w
-cnorea BD bd
 cnorea Bd bd
-cnorea Q! q!
+cnorea BD bd
 cnorea Qa qa
-cnorea WQ wq
-cnorea Wq wq
+cnorea Q! q!
 cnorea qw wq
 cnorea rg Rg
 cnorea wQ wq
-nn <space> za
+cnorea Wq wq
+cnorea WQ wq
 nn cn :cn<cr>
 nn cp :cp<cr>
 cnorea man Man
+nn co :copen<cr>
 nn <silent> j gj
 nn <silent> k gk
-nn co :copen<cr>
 nn <m-c> :make<cr>
 nn gf :e <cfile><cr>
 nn <m-.> :cd %:p:h<cr>
-cnorea cdc tcd %:p:h<cr>:
 nn <silent><m-n> :bn<cr>
 nn <silent><m-p> :bp<cr>
+cnorea cdc tcd %:p:h<cr>:
 nn <leader>% :source %<cr>
 nn <silent> <c-c> :noh<cr>
 nn <leader>e :se cole=0<cr>
@@ -131,6 +131,9 @@ fun! s:OnExit(job_id, code, event) dict
 	end
 endf
 tno <silent> <Esc> <c-\><c-n>
+tma <silent> <c-w> <c-\><c-n><c-w>
+tno <silent> <m-n> <c-\><c-n>:bn<cr>
+tno <silent> <m-p> <c-\><c-n>:bp<cr>
 nm <m-t> :let $DIR=expand('%:p:h')<cr>:ter<cr>cd $DIR;tput clear<cr>
 
 
