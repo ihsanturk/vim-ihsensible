@@ -136,7 +136,6 @@ tno <silent> <m-n> <c-\><c-n>:bn<cr>
 tno <silent> <m-p> <c-\><c-n>:bp<cr>
 nm <m-t> :let $DIR=expand('%:p:h')<cr>:ter<cr>cd $DIR;tput clear<cr>
 
-
 " persistent undo
 if has('persistent_undo')
 	se udf
