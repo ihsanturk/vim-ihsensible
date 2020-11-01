@@ -1,10 +1,10 @@
-"           ╭───────────────────ihsensible.vim────────────────────╮
-"           Maintainer:     ihsan, ihsanl[at]pm[dot]me            │
-"           Description:    default config that vim should come   │
-"           Last Change:    2020 Aug 31 11:12:36 +03, @1598861550 │
-"           First Appeared: 2020 Jun 22 11:47:47, @1592826467     │
-"           License:        MIT                                   │
-"           ╰─────────────────────────────────────────────────────╯
+"          ╭────────────────────ihsensible.vim─────────────────────╮
+"          Maintainer:     ihsan, ihsanl[at]pm[dot]me              │
+"          Description:    default config that vim should come with│
+"          Last Change:    2020 Nov 01 11:16:16+03                 │
+"          First Appeared: 2020 Jun 22 11:47:47                    │
+"          License:        MIT                                     │
+"          ╰───────────────────────────────────────────────────────╯
 
 let spaceindent=3
 let g:is_posix = 1
@@ -17,21 +17,21 @@ cnorea E e
 cnorea H h
 cnorea Q q
 cnorea W w
-cnorea Bd bd
 cnorea BD bd
-cnorea Qa qa
+cnorea Bd bd
 cnorea Q! q!
+cnorea Qa qa
+cnorea WQ wq
+cnorea Wq wq
 cnorea qw wq
 cnorea rg Rg
 cnorea wQ wq
-cnorea Wq wq
-cnorea WQ wq
 nn cn :cn<cr>
 nn cp :cp<cr>
 cnorea man Man
-nn co :copen<cr>
 nn <silent> j gj
 nn <silent> k gk
+nn co :copen<cr>
 nn <m-c> :make<cr>
 nn gf :e <cfile><cr>
 nn <m-.> :cd %:p:h<cr>
@@ -71,10 +71,10 @@ se wrap
 se nocul
 se nosmd
 se noswf
-se sbr=↪
 se cole=2
 se cocu=nc
 se mouse=a
+se sbr=↪
 se mmp=20000
 se noet ci pi sts=0
 se wim=longest,full
@@ -106,12 +106,12 @@ augroup Mkdir
 augroup END
 
 " better markdown mode
+au FileType markdown setl et
+au FileType markdown setl tw=79
+au FileType markdown setl fo+=ro
 au FileType markdown setl com-=n:#
 au FileType markdown setl com-=fb:-
 au FileType markdown setl com+=n:- " Auto append - in new line.
-au FileType markdown setl fo+=ro
-au FileType markdown setl tw=79
-au FileType markdown setl et
 
 " better terminal buffer " TODO: pluginize-vip
 if has('nvim')
@@ -156,10 +156,14 @@ aug END
 " toggle things
 nm <silent> <m-0> :call ToggleStatusLine()<cr>
 nn <silent> <m-1> :set cuc!<cr>
-"-----------<m-2> open fzf on left hand side
+"-----------<m-2> nerd tree toggle
 nm <silent> <m-3> :se rnu! nu!<cr>
+tma <silent> <m-3> :se rnu! nu!<cr>
 nm <silent> <m-4> :call ToggleSignColumn()<cr>
+tma <silent> <m-4> :call ToggleSignColumn()<cr>
 nm <silent> <m-8> :call Toggle80ColRule()<cr>
+tma <silent> <m-8> :call Toggle80ColRule()<cr>
+
 
 func! Toggle80ColRule()
 	if &cc == 80
