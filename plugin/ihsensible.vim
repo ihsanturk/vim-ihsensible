@@ -1,7 +1,7 @@
 "          ╭────────────────────ihsensible.vim─────────────────────╮
 "          Maintainer:     ihsan, ihsanl[at]pm[dot]me              │
 "          Description:    default config that vim should come with│
-"          Last Change:    2020 Nov 01 11:16:16+03                 │
+"          Last Change:    2020 Nov 02 11:56:40+03                 │
 "          First Appeared: 2020 Jun 22 11:47:47                    │
 "          License:        MIT                                     │
 "          ╰───────────────────────────────────────────────────────╯
@@ -94,7 +94,7 @@ aug chmod
 		\ if getline(1) =~ "^#!.*/bin/" |
 			\ sil !chmod +x <afile> |
 		\ endif
-aug END
+aug end
 
 " mkdir -p for vim on write
 augroup Mkdir
@@ -103,7 +103,7 @@ augroup Mkdir
 		\ if !isdirectory(expand("<afile>:p:h")) |
 			\ call mkdir(expand("<afile>:p:h"), "p") |
 		\ endif
-augroup END
+augroup end
 
 " better markdown mode
 au FileType markdown setl et
@@ -120,7 +120,7 @@ if has('nvim')
 		au BufEnter,TermOpen term://* start
 		au TermEnter * setl nonu nornu nomod
 		au TermClose * :bd!
-	aug END
+	aug end
 endif
 fun! TermTest(cmd)
 	cal termopen(a:cmd, {'on_exit': 's:OnExit'})
@@ -151,7 +151,7 @@ aug dynamic_smartcase
 	au!
 	au CmdLineEnter : se nosmartcase
 	au CmdLineLeave : se smartcase
-aug END
+aug end
 
 " toggle things
 nm <silent> <m-0> :call ToggleStatusLine()<cr>
