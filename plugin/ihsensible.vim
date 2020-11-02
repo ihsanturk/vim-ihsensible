@@ -190,7 +190,7 @@ endf
 
 func! ToggleSignColumn()
 	if &scl == 'no'
-		se scl=yes
+		se scl=auto
 	else
 		se scl=no
 	end
