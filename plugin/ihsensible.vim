@@ -37,7 +37,7 @@ nn gf :e <cfile><cr>
 nn <m-.> :cd %:p:h<cr>
 nn <silent><m-n> :bn<cr>
 nn <silent><m-p> :bp<cr>
-cnorea cdc tcd %:p:h<cr>:
+cnorea cdc tcd %:p:h<cr>
 nn <leader>% :source %<cr>
 nn <silent> <c-c> :noh<cr>
 nn <leader>e :se cole=0<cr>
