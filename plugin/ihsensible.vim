@@ -81,6 +81,7 @@ se wim=longest,full
 exe 'set sw='.spaceindent
 exe 'set ts='.spaceindent
 hi Visual gui=none cterm=none
+au FileType gitcommit se tw=50
 au FileType vimwiki,vim se tw=79
 hi ErrorMsg ctermfg=Red ctermbg=237
 se listchars=tab:\│\ ,trail:•,nbsp:+
@@ -161,20 +162,19 @@ nm <silent> <m-3> :se rnu! nu!<cr>
 tma <silent> <m-3> :se rnu! nu!<cr>
 nm <silent> <m-4> :call ToggleSignColumn()<cr>
 tma <silent> <m-4> :call ToggleSignColumn()<cr>
-nm <silent> <m-8> :call Toggle80ColRule()<cr>
-tma <silent> <m-8> :call Toggle80ColRule()<cr>
+nm <silent> <m-8> :call ToggleColorColumn()<cr>
+tma <silent> <m-8> :call ToggleColorColumn()<cr>
 
-
-func! Toggle80ColRule()
-	if &cc == 80
+func! ToggleColorColumn()
+	if &cc != 0
 		se cc=0
 	else
-		call Set80ColRule()
+		call SetColorColumn()
 	end
 endf
-func! Set80ColRule()
+func! SetColorColumn()
 	if exists('+colorcolumn')
-		se cc=80
+		se cc=+1
 	else
 		au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 	end
