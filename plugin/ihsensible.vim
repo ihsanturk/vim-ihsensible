@@ -159,11 +159,11 @@ nm <silent> <m-0> :call ToggleStatusLine()<cr>
 nn <silent> <m-1> :set cuc!<cr>
 "-----------<m-2> nerd tree toggle
 nm <silent> <m-3> :se rnu! nu!<cr>
-tma <silent> <m-3> :se rnu! nu!<cr>
+tma <silent> <m-3> <c-\><c-n>:se rnu! nu!<cr>
 nm <silent> <m-4> :call ToggleSignColumn()<cr>
-tma <silent> <m-4> :call ToggleSignColumn()<cr>
+tma <silent> <m-4> <c-\><c-n>:call ToggleSignColumn()<cr>
 nm <silent> <m-8> :call ToggleColorColumn()<cr>
-tma <silent> <m-8> :call ToggleColorColumn()<cr>
+tma <silent> <m-8> <c-\><c-n>:call ToggleColorColumn()<cr>
 
 func! ToggleColorColumn()
 	if &cc != 0
