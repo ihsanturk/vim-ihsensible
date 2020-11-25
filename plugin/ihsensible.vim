@@ -1,7 +1,6 @@
 "          ╭────────────────────ihsensible.vim─────────────────────╮
 "          Maintainer:     ihsan, ihsanl[at]pm[dot]me              │
 "          Description:    default config that vim should come with│
-"          Last Change:    2020 Nov 02 11:56:40+03                 │
 "          First Appeared: 2020 Jun 22 11:47:47                    │
 "          License:        MIT                                     │
 "          ╰───────────────────────────────────────────────────────╯
