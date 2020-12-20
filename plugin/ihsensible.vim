@@ -87,6 +87,14 @@ se listchars=tab:\│\ ,trail:•,nbsp:+
 if has('nvim') | se icm=nosplit sd='1000 | endif
 au FileType sql se mp=cat\ %\ \\\|\ mysql\ -uroot
 
+" wildmenu
+if has("wildmenu")
+	se wildignore+=*.a,*.o
+	se wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+	se wildignore+=.DS_Store,.git,.hg,.svn
+	se wildignore+=*~,*.swp
+endif
+
 " add +x flag for file
 aug chmod
 	au!
