@@ -5,6 +5,8 @@
 "          License:        MIT                                     │
 "          ╰───────────────────────────────────────────────────────╯
 
+syntax on
+
 let spaceindent=3
 let g:is_posix = 1
 let mapleader = '\'
@@ -56,6 +58,7 @@ tma <silent> <m-s-o> <c-\><c-n>:winc p<cr>
 
 "set
 se ic
+se nu
 se sb
 se awa
 se bri
@@ -66,7 +69,6 @@ se wic
 se list
 se noea
 se noru
-se wrap
 se nocul
 se nosmd
 se noswf
@@ -83,7 +85,7 @@ hi Visual gui=none cterm=none
 au FileType gitcommit se tw=50
 au FileType vimwiki,vim se tw=79
 hi ErrorMsg ctermfg=Red ctermbg=237
-se listchars=tab:\│\ ,trail:•,nbsp:+
+se listchars=tab:\┊\ ,trail:•,nbsp:+
 if has('nvim') | se icm=nosplit sd='1000 | endif
 au FileType sql se mp=cat\ %\ \\\|\ mysql\ -uroot
 
