@@ -39,8 +39,6 @@ nn <m-.> :cd %:p:h<cr>
 nn <silent><m-n> :bn<cr>
 nn <silent><m-p> :bp<cr>
 cnorea cdc tcd %:p:h<cr>
-nn <leader>% :source %<cr>
-nn <silent> <c-c> :noh<cr>
 nn <leader>e :se cole=0<cr>
 nn <leader>v :se cole=3<cr>
 nm <leader>r :so $MYVIMRC<cr>
@@ -127,7 +125,7 @@ au FileType markdown setl com+=n:- " Auto append - in new line.
 if has('nvim')
 	aug custom_term
 		au!
-		au BufEnter,TermOpen term://* start
+		au BufEnter,TermOpen term://* startinsert
 		au TermEnter * setl nonu nornu nomod
 		au TermClose * :bd!
 	aug end
