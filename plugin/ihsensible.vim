@@ -125,7 +125,7 @@ au FileType markdown setl com+=n:- " Auto append - in new line.
 if has('nvim')
 	aug custom_term
 		au!
-		au BufEnter,TermOpen term://* startinsert
+		au TermOpen term://* startinsert
 		au TermEnter * setl nonu nornu nomod
 		au TermClose * :bd!
 	aug end
