@@ -1,17 +1,17 @@
 "          ╭────────────────────ihsensible.vim─────────────────────╮
 "          Maintainer:     ihsan, ihsanl[at]pm[dot]me              │
-"          Description:    default config that vim should come with│
+"          Description:    personal defaults                       │
 "          First Appeared: 2020 Jun 22 11:47:47                    │
 "          License:        MIT                                     │
 "          ╰───────────────────────────────────────────────────────╯
 
 syntax on
 
-let spaceindent=3
 let g:is_posix = 1
 let mapleader = '\'
+let spaceindent = 3
 let g:netrw_banner = 0
-let g:netrw_liststyle=3
+let g:netrw_liststyle = 3
 let g:netrw_dirhistmax = 0
 
 "maps
@@ -35,7 +35,6 @@ nn <silent> j gj
 nn <silent> k gk
 nn co :copen<cr>
 nn <m-c> :make<cr>
-nn gf :e <cfile><cr>
 nn <m-.> :cd %:p:h<cr>
 nn <silent><m-n> :bn<cr>
 nn <silent><m-p> :bp<cr>
@@ -140,7 +139,6 @@ tno <silent> <m-n> <c-\><c-n>:bn<cr>
 tno <silent> <m-p> <c-\><c-n>:bp<cr>
 nm <m-t> :let $DIR=expand('%:p:h')<cr>:ter<cr>cd $DIR;tput clear<cr>
 
-" persistent undo
 if has('persistent_undo')
 	se udf
 	se udir=~/.cache/vim
@@ -150,7 +148,6 @@ if has('unnamedplus')
 end
 scripte utf-8
 
-" dynamic smartcase
 aug dynamic_smartcase
 	au!
 	au CmdLineEnter : se nosmartcase
@@ -160,43 +157,8 @@ aug end
 " toggle things
 nm <silent> <m-0> :call ToggleStatusLine()<cr>
 nn <silent> <m-1> :set cuc!<cr>
-"-----------<m-2> nerd tree toggle
+nn <silent> <m-2> :20Lexplore<cr>
 nm <silent> <m-3> :se rnu! nu!<cr>
 tma <silent> <m-3> <c-\><c-n>:se rnu! nu!<cr>
-nm <silent> <m-4> :call ToggleSignColumn()<cr>
-tma <silent> <m-4> <c-\><c-n>:call ToggleSignColumn()<cr>
-nm <silent> <m-8> :call ToggleColorColumn()<cr>
-tma <silent> <m-8> <c-\><c-n>:call ToggleColorColumn()<cr>
-
-func! ToggleColorColumn()
-	if &cc != 0
-		se cc=0
-	else
-		call SetColorColumn()
-	end
-endf
-func! SetColorColumn()
-	if exists('+colorcolumn')
-		se cc=+1
-	else
-		au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-	end
-endf
-
-func! ToggleStatusLine()
-	if &ls == 2
-		se ls=0
-	else
-		se ls=2
-	end
-endf
-
-func! ToggleSignColumn()
-	if &scl == 'no'
-		se scl=auto
-	else
-		se scl=no
-	end
-endf
 
 " vim: set filetype=vim fdm=marker :
