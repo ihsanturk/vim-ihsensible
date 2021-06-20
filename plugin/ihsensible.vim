@@ -10,6 +10,7 @@ syntax on
 let spaceindent=3
 let g:is_posix = 1
 let mapleader = '\'
+let g:netrw_banner = 0
 let g:netrw_liststyle=3
 let g:netrw_dirhistmax = 0
 
@@ -42,9 +43,7 @@ cnorea cdc tcd %:p:h<cr>
 nn <leader>e :se cole=0<cr>
 nn <leader>v :se cole=3<cr>
 nm <leader>r :so $MYVIMRC<cr>
-nn <leader>c :exec "e " . $MYVIMRC<cr>
 xn // y/\V<c-r>=escape(@",'/\')<cr><cr>
-nn <leader>C :exec "tabe " . $MYVIMRC<cr>
 nn <leader>d :exe 'norm! a'.system("date '+%Y %b %d %X'\|tr -d '\n'")<cr>
 
 " switch between windows with meta (shift)? o
@@ -58,7 +57,6 @@ tma <silent> <m-s-o> <c-\><c-n>:winc p<cr>
 se ic
 se nu
 se sb
-se awa
 se bri
 se lbr
 se scs
@@ -73,13 +71,11 @@ se noswf
 se sbr=↪
 se cole=2
 se cocu=nc
-se mouse=a
 se mmp=20000
 se noet ci pi sts=0
 se wim=longest,full
 exe 'set sw='.spaceindent
 exe 'set ts='.spaceindent
-hi Visual gui=none cterm=none
 au FileType gitcommit se tw=50
 au FileType vimwiki,vim se tw=79
 hi ErrorMsg ctermfg=Red ctermbg=237
